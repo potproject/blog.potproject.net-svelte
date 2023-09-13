@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "メイリオ","Hiragino Kaku Gothic Pro",Meiryo,"ヒラギノ角ゴ Pro W3","MS PGothic","MS UI Gothic",Helvetica,Arial,sans-serif;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+.article {
+  h1 {
+    @apply text-2xl border-b-2 pb-2 mb-6 my-4 font-bold border-gray-200 dark:border-gray-600;
+  }
+  h2 {
+    @apply text-2xl border-l-4 border-teal-400 pl-2 my-4 mt-6 font-semibold dark:border-teal-600;
+  }
+  h3 {
+    @apply text-lg border-l-2 border-gray-400 pl-2 my-4 mt-6 dark:border-gray-600;
+  }
+  p {
+    @apply mb-4 mt-2;
+  }
+  a {
+    @apply text-blue-400 hover:underline hover:text-blue-600 dark:text-blue-200 dark:hover:text-blue-400;
+  }
+
+  :not(pre) code {
+    @apply bg-gray-100 rounded mx-1 p-1 text-red-400;
+  }
+
+  pre code {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    color: #abb2bf;
+    background: #282c34;
+  }
+}
+
+.vt-image {
+  view-transition-name: var(--tag);
+}
+
+.vt-text {
+  view-transition-name: var(--tag);
+}
