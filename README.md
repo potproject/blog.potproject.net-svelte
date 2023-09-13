@@ -1,4 +1,4 @@
-# blog.potproject.net
+# blog.potproject.net-svelte
 Work in Progress
 
 ```bash

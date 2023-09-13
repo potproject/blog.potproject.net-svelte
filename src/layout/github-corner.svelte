@@ -7,7 +7,7 @@
   }
 </script>
 
-<a href="https://github.com/potproject/blog.potproject.net/" class="github-corner {!isTop ? 'hidden' : ''}" aria-label="View source on GitHub">
+<a href="https://github.com/potproject/blog.potproject.net-svelte/" class="github-corner {!isTop ? 'hidden' : ''}" aria-label="View source on GitHub">
 <svg
     width="65"
     height="65"
