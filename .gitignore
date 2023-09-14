@@ -8,5 +8,5 @@ node_modules
 !.env.example
 contentful-export-*
 static/rss.xml
-static/latest.json
+static/atom.xml
 .vercel
