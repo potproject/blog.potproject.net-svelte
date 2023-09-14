@@ -13,6 +13,20 @@
 	  : 'blog.potproject.net'
   	}
 	</title>
+	<meta name="description" content="JS/PHP/Go/Docker/Nginxなど。技術または趣味寄りの発信ブログです。" />
+	<meta property="og:title" content="blog.potproject.net" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://blog.potproject.net/" />
+	<meta property="og:image" content="https://blog.potproject.net/author.png" />
+	<meta property="og:site_name" content="blog.potproject.net" />
+	<meta property="og:locale" content="ja_JP" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@potpro" />
+	<meta name="twitter:creator" content="@potpro" />
+	<meta name="twitter:title" content="blog.potproject.net" />
+	<meta name="twitter:image" content="https://blog.potproject.net/author.png" />
+	<meta name="twitter:domain" content="blog.potproject.net" />
+	<meta name="twitter:url" content="https://blog.potproject.net/" />
 </svelte:head>
 
 <div class="container mx-auto xl:px-20 md:px-8 py-3">

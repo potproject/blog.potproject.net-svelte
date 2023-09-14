@@ -25,7 +25,7 @@ export const load: Load = async ({params}) => {
   }
 
   // page = 1 redirect
-  if (pageInt === 1) {
+  if (pageInt === 1 || pageInt === 0) {
     // redirect
     throw redirect(301, `/`)
   }
