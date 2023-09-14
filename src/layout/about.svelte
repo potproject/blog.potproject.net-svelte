@@ -59,6 +59,22 @@
               >
                 <i class="lab la-2x la-github" />
               </a>
+              <!-- Bluesky -->
+              <a
+                href="https://bsky.app/profile/potp.ro"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ml-3 text-gray-400 hover:text-gray-800 text-lg dark:text-gray-50 dark:hover:text-gray-600 grayscale hover:grayscale-0"
+                title="bluesky"
+              >
+                <span class="relative inline-flex justify-center items-center">
+                  <!-- box -->
+                  <span class="bg-gray-400 dark:bg-gray-50 rounded-md w-7 h-7 m-1" />
+                  <img src="/social/bluesky.png"
+                    class="absolute w-7 h-7 m-1 opacity-0 hover:opacity-100"
+                    alt="bluesky" />
+                </span>
+              </a>
             </div>
           </div>
           <div class="w-12 h-1 bg-teal-500 rounded mt-4 mb-4" />
