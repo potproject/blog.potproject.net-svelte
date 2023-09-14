@@ -8,6 +8,22 @@
 
 <svelte:head>
   	<title>{data.article.title} - blog.potproject.net</title>
+    <!-- ogp -->
+    <meta property="og:title" content="{data.article.title} - blog.potproject.net" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://blog.potproject.net/{data.article.url}" />
+    {#if data.article.headerImgur}
+    <meta property="og:image" content="{data.article.headerImgur}" />
+    {/if}
+    <meta property="og:site_name" content="blog.potproject.net" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@potpro" />
+    <meta name="twitter:creator" content="@potpro" />
+    <meta name="twitter:title" content="{data.article.title} - blog.potproject.net" />
+    <meta name="twitter:image:alt" content="{data.article.title}" />
+    <meta name="twitter:domain" content="blog.potproject.net" />
+    <meta name="twitter:url" content="https://blog.potproject.net/{data.article.url}" />
 </svelte:head>
 
 <div class="container mx-auto xl:px-20 md:px-8 py-3">
@@ -19,11 +35,11 @@
             <section class='text-gray-600 body-font dark:text-gray-300'>
                 <div class="pt-2 mx-auto px-1 md:px-0">
                     <div class="flex flex-wrap">
-                        <div class="lg:h-48 h-40 w-full relative">
+                        <div class="h-48 w-full relative">
                             {#if data.article.headerImgur}
-                            <img src="{data.article.headerImgur}" alt="{data.article.title}" class="lg:h-48 h-40 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}" />
+                            <img src="{data.article.headerImgur}" alt="{data.article.title}" class="h-48 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}" />
                             {:else}
-                            <span class="lg:h-48 h-40 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}"></span>
+                            <span class="h-48 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}"></span>
                             {/if}
                             <div class="z-10 w-full h-full">
                                 <div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-black to-black opacity-75"></div>
@@ -51,6 +67,7 @@
                                     {@html data.article.content}
                                 {/if}
                             </div>
+                            <div class="w-12 h-1 bg-teal-500 rounded mt-8 mb-4 mx-auto" />
                         </div>
                     </div>
                 </div>

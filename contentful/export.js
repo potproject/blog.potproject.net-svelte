@@ -13,6 +13,9 @@ const dataDirectory = path.join(process.cwd(), 'data')
 const staticDirectory = path.join(process.cwd(), 'static')
 const entriesDirectory = path.join(dataDirectory, 'entries')
 
+const baseUrl = 'https://blog.potproject.net'
+
+
 if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_MANAGEMENT_TOKEN || !CONTENTFUL_DEFAULT_LOCALE) {
   throw new Error(
     [
@@ -123,10 +126,10 @@ const generateRss = (entries) => {
 	const feed = new Feed({
 		title: 'blog.potproject.net',
 		description: '独り言とか技術的なこと。',
-		id: 'https://blog.potproject.net',
-		link: 'https://blog.potproject.net',
+		id: baseUrl,
+		link: baseUrl,
 		language: 'ja', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
-		image: 'https://blog.potproject.net/author.png',
+		image: `${baseUrl}/author.png`,
 		copyright: 'potproject',
 		generator: 'Sveltekit',
 		author: {
@@ -139,11 +142,11 @@ const generateRss = (entries) => {
 	for (const entry of entries.slice(0, 20)) {
 		if (!entry.fields.hiddenPage || !entry.fields.hiddenPage[CONTENTFUL_DEFAULT_LOCALE]) {
 			const url = generateUrl(entry);
-			const html = marked(entry.fields.content[CONTENTFUL_DEFAULT_LOCALE]);
+			const html = removeMd(entry.fields.content[CONTENTFUL_DEFAULT_LOCALE]);
 			feed.addItem({
 				title: entry.fields.title[CONTENTFUL_DEFAULT_LOCALE],
-				id: url,
-				link: `https://blog.potproject.net${url}`,
+				id: `${baseUrl}${url}`,
+				link: `${baseUrl}${url}`,
 				description: html,
 				date: new Date(entry.fields.createdDate[CONTENTFUL_DEFAULT_LOCALE]),
 				image: entry.fields.headerImgur ? entry.fields.headerImgur[CONTENTFUL_DEFAULT_LOCALE] : null,

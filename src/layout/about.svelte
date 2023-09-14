@@ -99,6 +99,7 @@
               </div>
             {/each}
           </div>
+          <div class="w-12 h-1 bg-teal-500 rounded mt-4 mb-4" />
       </div>
     </div>
   </div>
