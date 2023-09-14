@@ -16,6 +16,14 @@ type Query = {
         url: string;
     }
 }
+
+function useWebp(url: string){
+    if(url.includes('images.ctfassets.net')){
+        url = url + '?fm=webp';
+    }
+    return url;
+}
+
 export async function load({ params }: Query) {
     
     // json load
@@ -34,9 +42,7 @@ export async function load({ params }: Query) {
             return html.replace(/^<a /, `<a target="_blank" rel="noreferrer noopener" `);
         };
         renderer.image = (href, title, text) => {
-            if(href.includes('images.ctfassets.net')){
-                href = href + '?fm=webp';
-            }
+            href = useWebp(href);
             const html = imageRenderer.call(renderer, href, title, text);
             return html;
         };
@@ -67,7 +73,7 @@ export async function load({ params }: Query) {
                 tags: json.fields.tags?.[CONTENTFUL_DEFAULT_LOCALE] ?? [],
                 headerBackgroundColor: json.fields.headerBackgroundColor?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
                 redirectPath: json.fields.redirectPath?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
-                headerImgur: json.fields.headerImgur?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
+                headerImgur: useWebp(json.fields.headerImgur?.[CONTENTFUL_DEFAULT_LOCALE] ?? ''),
                 hiddenPage: json.fields.hiddenPage?.[CONTENTFUL_DEFAULT_LOCALE] ?? false,
             }
         }
