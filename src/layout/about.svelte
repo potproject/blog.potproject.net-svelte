@@ -28,7 +28,7 @@
               <a
                 href="https://twitter.com/potpro"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me"
                 class="ml-3 text-gray-400 hover:text-white text-lg dark:text-gray-200 dark:hover:text-gray-800"
                 title="twitter(X)"
               >
@@ -43,7 +43,7 @@
               <a
                 href="https://mastodon.potproject.net/@potpro"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me"
                 class="ml-3 text-gray-400 hover:text-blue-600 text-lg dark:text-gray-50 dark:hover:text-blue-400"
                 title="mastodon"
               >
@@ -53,7 +53,7 @@
               <a
                 href="https://github.com/potproject/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me"
                 class="ml-3 text-gray-400 hover:text-gray-800 text-lg dark:text-gray-50 dark:hover:text-gray-600"
                 title="github"
               >
@@ -63,7 +63,7 @@
               <a
                 href="https://bsky.app/profile/potp.ro"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me"
                 class="ml-3 text-gray-400 hover:text-gray-800 text-lg dark:text-gray-50 dark:hover:text-gray-600 grayscale hover:grayscale-0"
                 title="bluesky"
               >
