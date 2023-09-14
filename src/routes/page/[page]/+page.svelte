@@ -33,7 +33,7 @@
 						  <div class="h-full border-2 border-gray-200 border-opacity-60 overflow-hidden bg-white hover:bg-gray-50 hover:shadow-lg dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:hover:shadow-xl">
 						  {#if post.headerImgur}
 						  <img class="h-48 w-full object-cover object-center vt-image" style:--tag="vt-image-{post.id}"
-						  	src={post.headerImgur.includes('images.ctfassets.net') ? post.headerImgur + '?fm=webp' : post.headerImgur}
+						  	src={post.headerImgur.includes('images.ctfassets.net') ? post.headerImgur + '?fm=webp&w=629&h=192&fit=thumb' : post.headerImgur}
 							alt={post.title}
 						  >
 						  {/if}

@@ -73,7 +73,7 @@ export async function load({ params }: Query) {
                 tags: json.fields.tags?.[CONTENTFUL_DEFAULT_LOCALE] ?? [],
                 headerBackgroundColor: json.fields.headerBackgroundColor?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
                 redirectPath: json.fields.redirectPath?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
-                headerImgur: useWebp(json.fields.headerImgur?.[CONTENTFUL_DEFAULT_LOCALE] ?? ''),
+                headerImgur: json.fields.headerImgur?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
                 hiddenPage: json.fields.hiddenPage?.[CONTENTFUL_DEFAULT_LOCALE] ?? false,
             }
         }

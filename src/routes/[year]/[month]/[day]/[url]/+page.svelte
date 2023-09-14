@@ -38,7 +38,9 @@
                     <div class="flex flex-wrap">
                         <div class="h-48 w-full relative">
                             {#if data.article.headerImgur}
-                            <img src="{data.article.headerImgur}" alt="{data.article.title}" class="h-48 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}" />
+                            <img
+                                src={data.article.headerImgur.includes('images.ctfassets.net') ? data.article.headerImgur + '?fm=webp&w=629&h=192&fit=thumb' : data.article.headerImgur}
+                                alt="{data.article.title}" class="h-48 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}" />
                             {:else}
                             <span class="h-48 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}"></span>
                             {/if}
