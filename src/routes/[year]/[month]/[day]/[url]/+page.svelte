@@ -14,6 +14,7 @@
     <meta property="og:url" content="https://blog.potproject.net/{data.article.url}" />
     {#if data.article.headerImgur}
     <meta property="og:image" content="{data.article.headerImgur}" />
+    <meta name="twitter:image" content="{data.article.headerImgur}" />
     {/if}
     <meta property="og:site_name" content="blog.potproject.net" />
     <meta property="og:locale" content="ja_JP" />

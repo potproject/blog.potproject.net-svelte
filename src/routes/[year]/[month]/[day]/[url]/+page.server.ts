@@ -28,9 +28,17 @@ export async function load({ params }: Query) {
         const json = JSON.parse(fs.readFileSync(file, 'utf8')) as BlogPost;
         const renderer = new Renderer();
         const linkRenderer = renderer.link;
+        const imageRenderer = renderer.image;
         renderer.link = (href, title, text) => {
             const html = linkRenderer.call(renderer, href, title, text);
             return html.replace(/^<a /, `<a target="_blank" rel="noreferrer noopener" `);
+        };
+        renderer.image = (href, title, text) => {
+            if(href.includes('images.ctfassets.net')){
+                href = href + '?fm=webp';
+            }
+            const html = imageRenderer.call(renderer, href, title, text);
+            return html;
         };
 
         const marked = new Marked(
