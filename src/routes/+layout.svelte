@@ -1,5 +1,6 @@
 <script>
   import { onNavigate } from '$app/navigation';
+  import Analytics from '../layout/analytics.svelte'
   import Footer from '../layout/footer.svelte'
   import Header from '../layout/header.svelte'
   import Up from '../layout/up.svelte'
@@ -18,6 +19,7 @@
 </script>
 
 <main>
+  <Analytics />
   <div class="bg-stone-50 dark:bg-gray-900">
     <Header />
     <slot />
