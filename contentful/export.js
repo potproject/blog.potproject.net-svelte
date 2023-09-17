@@ -4,8 +4,6 @@ import removeMd from 'remove-markdown'
 import fs from 'fs'
 import path from 'path'
 import { Feed } from 'feed'
-import { marked } from 'marked'
-
 dotenv.config()
 
 const { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN, CONTENTFUL_DEFAULT_LOCALE } = process.env
@@ -59,14 +57,6 @@ const generateRedirectPath = (entries) => {
   const redirectPathFile = path.join(dataDirectory, 'redirectPaths.json')
   fs.writeFileSync(redirectPathFile, JSON.stringify(redirectPaths, null, 2))
   console.log(`Redirect path file has been created: ${redirectPathFile}`)
-}
-
-const generateUrl = (entry) => {
-	  const createdDate = entry.fields.createdDate[CONTENTFUL_DEFAULT_LOCALE];
-	  const year = createdDate.slice(0, 4);
-	  const month = createdDate.slice(5, 7);
-	  const day = createdDate.slice(8, 10);
-	  return `/${year}/${month}/${day}/${entry.fields.url[CONTENTFUL_DEFAULT_LOCALE]}`;
 }
 
 const generatePageList = (entries) => {
@@ -158,6 +148,26 @@ const generateRss = (entries) => {
   console.log(`Atom file has been created: ${atomFile}`)
 }
 
+const generateHiddenPage = (entries) => {
+  const hiddenPage = []
+  for (const entry of entries) {
+    if (entry.fields.hiddenPage && entry.fields.hiddenPage[CONTENTFUL_DEFAULT_LOCALE]) {
+      hiddenPage.push(generateUrl(entry))
+    }
+  }
+  const hiddenPageFile = path.join(dataDirectory, 'hiddenPage.json')
+  fs.writeFileSync(hiddenPageFile, JSON.stringify(hiddenPage, null, 2))
+  console.log(`Hidden page file has been created: ${hiddenPageFile}`)
+}
+
+const generateUrl = (entry) => {
+  const createdDate = entry.fields.createdDate[CONTENTFUL_DEFAULT_LOCALE];
+  const year = createdDate.slice(0, 4);
+  const month = createdDate.slice(5, 7);
+  const day = createdDate.slice(8, 10);
+  return `/${year}/${month}/${day}/${entry.fields.url[CONTENTFUL_DEFAULT_LOCALE]}`;
+}
+
 const execute = (entries) => {
 	// sort by createdDate
 	entries.sort((a, b) => {
@@ -168,6 +178,7 @@ const execute = (entries) => {
   generateFile(entries)
   generateRedirectPath(entries)
   generatePageList(entries)
+  generateHiddenPage(entries)
   generateRss(entries)
   console.log('Done! Total files: ' + entries.length)
 }

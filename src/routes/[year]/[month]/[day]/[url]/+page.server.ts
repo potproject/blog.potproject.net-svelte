@@ -6,7 +6,34 @@ import hljs from 'highlight.js';
 import { error } from "@sveltejs/kit";
 import type { BlogPost } from '../../../../../types/blogPost';
 import list from '../../../../../../data/pageList.json';
+import hiddlePage from '../../../../../../data/hiddenPage.json';
 export const trailingSlash = 'always';
+
+/**
+ * Prerender Setup
+ */
+export function entries() {
+    let entries = [];
+    for(let entry of list){
+        const url = entry.url;
+        entries.push({
+            year: url.split('/')[1],
+            month: url.split('/')[2],
+            day: url.split('/')[3],
+            url: url.split('/').slice(4).join('/'),
+        });
+
+    }
+    for(let url of hiddlePage){
+        entries.push({
+            year: url.split('/')[1],
+            month: url.split('/')[2],
+            day: url.split('/')[3],
+            url: url.split('/').slice(4).join('/'),
+        });
+    }
+    return entries;
+}
 
 type Query = {
     params:{

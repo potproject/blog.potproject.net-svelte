@@ -42,9 +42,9 @@
                                 src={data.article.headerImgur.includes('images.ctfassets.net') ? data.article.headerImgur + '?fm=webp&w=629&h=192&fit=thumb' : data.article.headerImgur}
                                 alt="{data.article.title}" class="h-48 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}" />
                             {:else}
-                            <span class="h-48 w-full object-cover object-center vt-image vt-image" style:--tag="vt-image-{data.article.id}"></span>
+                            <span class="h-48 w-full object-cover object-center vt-image" style:--tag="vt-image-{data.article.id}"></span>
                             {/if}
-                            <div class="z-10 w-full h-full">
+                            <div class="z-10">
                                 <div class="absolute bottom-0 w-full h-full bg-gradient-to-t from-black to-black opacity-75"></div>
                             </div>
                             <h1 class="absolute top-4 text-teal-50 text-xl md:text-2xl font-semibold px-6 py-2 w-full h-full z-20 vt-text" style:--tag="vt-text-{data.article.id}">{data.article.title}</h1>
