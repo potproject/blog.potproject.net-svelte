@@ -1,5 +1,12 @@
 # blog.potproject.net-svelte
-Work in Progress
+
+https://blog.potproject.net
+
+My Blog Source code.
+
+SvelteKit/Svelte/Contentful
+
+## Build
 
 ```bash
 yarn
