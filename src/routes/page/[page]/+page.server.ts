@@ -32,7 +32,7 @@ export const load: Load = async ({params}) => {
 
   const limit = 10
   const offset = (pageInt - 1) * limit
-  let count = 0
+  const count = list.length
   const current = pageInt
   const prev = pageInt > 1 ? pageInt - 1 : null
   const next = list.length > (pageInt * limit) ? pageInt + 1 : null

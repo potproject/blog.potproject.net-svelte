@@ -11,7 +11,7 @@
     <!-- ogp -->
     <meta property="og:title" content="{data.article.title} - blog.potproject.net" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://blog.potproject.net/{data.article.url}" />
+    <meta property="og:url" content="https://blog.potproject.net/{data.path}" />
     {#if data.article.headerImgur}
     <meta property="og:image" content="{data.article.headerImgur}" />
     <meta name="twitter:image" content="{data.article.headerImgur}" />
@@ -24,7 +24,6 @@
     <meta name="twitter:title" content="{data.article.title} - blog.potproject.net" />
     <meta name="twitter:image:alt" content="{data.article.title}" />
     <meta name="twitter:domain" content="blog.potproject.net" />
-    <meta name="twitter:url" content="https://blog.potproject.net/{data.article.url}" />
 </svelte:head>
 
 <div class="container mx-auto xl:px-20 md:px-8 py-3">

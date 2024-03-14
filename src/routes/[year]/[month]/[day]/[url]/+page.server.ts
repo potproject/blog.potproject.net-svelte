@@ -60,6 +60,7 @@ export async function load({ params }: Query) {
         const count = list.length;
 
         const file = `data/entries/${params.year}/${params.month}/${params.day}/${params.url}.json`;
+        const path = `${params.year}/${params.month}/${params.day}/${params.url}/`;
         const json = JSON.parse(fs.readFileSync(file, 'utf8')) as BlogPost;
         const renderer = new Renderer();
         const linkRenderer = renderer.link;
@@ -102,7 +103,8 @@ export async function load({ params }: Query) {
                 redirectPath: json.fields.redirectPath?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
                 headerImgur: json.fields.headerImgur?.[CONTENTFUL_DEFAULT_LOCALE] ?? '',
                 hiddenPage: json.fields.hiddenPage?.[CONTENTFUL_DEFAULT_LOCALE] ?? false,
-            }
+            },
+            path: path,
         }
     }catch(e){
         console.log(e);

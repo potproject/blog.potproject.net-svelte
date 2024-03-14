@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-stone-50 dark:bg-gray-900;
-  font-family: "メイリオ","Hiragino Kaku Gothic Pro",Meiryo,"ヒラギノ角ゴ Pro W3","MS PGothic","MS UI Gothic",Helvetica,Arial,sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif,"Segoe UI Emoji";
 }
 
 h1 {
