@@ -23,6 +23,22 @@ h1 {
   p {
     @apply mb-4 mt-2;
   }
+  ul {
+    @apply list-disc list-outside pl-6 mb-4 mt-2;
+  }
+  ol {
+    @apply list-decimal list-outside pl-6 mb-4 mt-2;
+  }
+  li {
+    @apply my-1 pl-1;
+  }
+  li > ul,
+  li > ol {
+    @apply mt-1 mb-1;
+  }
+  li > p {
+    @apply my-1;
+  }
   a {
     @apply text-blue-400 hover:underline hover:text-blue-600 dark:text-blue-200 dark:hover:text-blue-400;
   }
