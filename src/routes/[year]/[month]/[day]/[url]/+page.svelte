@@ -63,7 +63,7 @@
                                 <span>{dayjs(data.article.createdDate).format('YYYY/MM/DD')}</span>
                             </div>
                         </div>
-                        <div class="px-6 py-2 w-full h-full border-2 border-gray-200 border-t-0 border-opacity-60 overflow-hidden bg-white dark:bg-gray-800 dark:text-gray-100">
+                        <div class="px-5 py-6 md:px-9 md:py-8 lg:px-10 lg:py-10 w-full h-full border-2 border-gray-200 border-t-0 border-opacity-60 overflow-hidden bg-white dark:bg-gray-800 dark:text-gray-100">
                             <div class="article">
                                 {#if data.article.content}
                                     {@html data.article.content}

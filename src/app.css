@@ -11,30 +11,32 @@ h1 {
 }
 
 .article {
+  @apply text-base leading-8 md:text-[1.05rem] md:leading-9;
+
   h1 {
-    @apply text-2xl border-b-2 pb-2 mb-6 my-4 font-bold border-gray-200 dark:border-gray-600;
+    @apply text-2xl border-b-2 pb-3 mt-2 mb-8 font-bold leading-snug border-gray-200 dark:border-gray-600;
   }
   h2 {
-    @apply text-2xl border-l-4 border-teal-400 pl-2 my-4 mt-6 font-semibold dark:border-teal-600;
+    @apply text-2xl border-l-4 border-teal-400 pl-3 mt-10 mb-5 font-semibold leading-snug dark:border-teal-600;
   }
   h3 {
-    @apply text-lg border-l-2 border-gray-400 pl-2 my-4 mt-6 dark:border-gray-600;
+    @apply text-xl border-l-2 border-gray-400 pl-3 mt-8 mb-4 font-semibold leading-snug dark:border-gray-600;
   }
   p {
-    @apply mb-4 mt-2;
+    @apply my-0 mb-6;
   }
   ul {
-    @apply list-disc list-outside pl-6 mb-4 mt-2;
+    @apply list-disc list-outside pl-6 mt-2 mb-6 space-y-1;
   }
   ol {
-    @apply list-decimal list-outside pl-6 mb-4 mt-2;
+    @apply list-decimal list-outside pl-6 mt-2 mb-6 space-y-1;
   }
   li {
-    @apply my-1 pl-1;
+    @apply pl-1;
   }
   li > ul,
   li > ol {
-    @apply mt-1 mb-1;
+    @apply mt-2 mb-2;
   }
   li > p {
     @apply my-1;
@@ -44,7 +46,19 @@ h1 {
   }
 
   :not(pre) code {
-    @apply bg-gray-100 rounded mx-1 p-1 text-red-400;
+    @apply bg-gray-100 rounded px-1.5 py-0.5 text-red-400 dark:bg-gray-700 dark:text-red-200;
+  }
+
+  blockquote {
+    @apply my-7 border-l-4 border-gray-300 pl-4 text-gray-500 dark:border-gray-600 dark:text-gray-300;
+  }
+
+  img {
+    @apply my-8 max-w-full;
+  }
+
+  pre {
+    @apply my-7 rounded-md overflow-hidden;
   }
 
   pre code {
@@ -53,6 +67,23 @@ h1 {
     padding: 1em;
     color: #abb2bf;
     background: #282c34;
+  }
+
+  hr {
+    @apply my-10 border-gray-200 dark:border-gray-700;
+  }
+
+  table {
+    @apply my-7 w-full border-collapse text-sm leading-6;
+  }
+
+  th,
+  td {
+    @apply border border-gray-200 px-3 py-2 align-top dark:border-gray-700;
+  }
+
+  th {
+    @apply bg-gray-50 font-semibold dark:bg-gray-700;
   }
 }
 
